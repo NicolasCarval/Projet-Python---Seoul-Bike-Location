@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Deployment Tutorial 1</title>
+    <link href="{{ url_for('static', filename='newstyle6.css') }}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="brand-logo"></div>
+        <div class="brand-title">Result :</div>
+        {{ prediction_text }}
+        <br />
+        <form class="inputs" action="{{ url_for('predict')}}" method="post">
+            <div class="brand-title">Seoul bike location prediction</div>
+
+            <label for="Hour">Hour</label>
+            <input type="number" name="Hour" id="Hour" placeholder=" " autocomplete="off" min="0" max="23" required />
+            <label for="Temperature(°C)">Temperature(°C)</label>
+            <input type="text" name="Temperature(°C)" id="Temperature(°C)" placeholder=" " autocomplete="off" required />
+
+            <label for="Humidity(%)">Humidity(%)</label>
+            <input type="number" name="Humidity(%)" id="Humidity(%)" placeholder=" " autocomplete="off" min="0" max="100" required />
+
+
+            <label for="Wind speed (m/s)">Wind speed (m/s)</label>
+            <input type="text" name="Wind speed (m/s)" id="Wind speed (m/s)" placeholder=" " autocomplete="off" required />
+
+            <label>Visibility :</label>
+            <label for="visibility">Yes</label>
+            <input type="radio" id="visibility" name="Visibility" value="1" checked>
+            <label for="no visibility">No</label>
+            <input type="radio" id="no visibility" name="Visibility" value="0">
+
+            <label>Sun :</label>
+            <label for="sun">Yes</label>
+            <input type="radio" id="sun" name="Sun" value="1" checked>
+            <label for="no sun">No</label>
+            <input type="radio" id="no sun" name="Sun" value="0">
+
+            <label>Holidays :</label>
+            <label for="holiday">Yes</label>
+            <input type="radio" id="holiday" name="Holiday" value="1" checked>
+            <label for="no holiday">No</label>
+            <input type="radio" id="no holiday" name="Holiday" value="0">
+
+            <label for="Month">Month:</label>
+            <input type="number" name="Month" placeholder=" " min="1" max="12" autocomplete="off" required />
+
+            <label>Snow : </label>
+            <label for="snow">Yes</label>
+            <input type="radio" id="snow" name="Snow" value="1" checked>
+            <label for="no snow">No</label>
+            <input type="radio" id="no snow" name="Snow" value="0">
+
+            <label>Rain :</label>
+            <label for="rain">Yes</label>
+            <input type="radio" id="rain" name="Rain" value="1" checked>
+            <label for="no rain">No</label>
+            <input type="radio" id="no rain" name="Rain" value="0">
+
+            <label>Season</label>
+            <label for="winter">Winter</label>
+            <input type="radio" id="winter" name="season" value="Winter" checked>
+            <label for="spring">Spring</label>
+            <input type="radio" id="spring" name="season" value="Spring">
+            <label for="autumn">Autumn</label>
+            <input type="radio" id="autumn" name="season" value="Autumn">
+            <label for="summer">Summer</label>
+            <input type="radio" id="summer" name="season" value="Summer">
+
+
+            <button type="submit">Make a prediction</button>
+        </form>
+    </div>
+    
+</body>
+</html>

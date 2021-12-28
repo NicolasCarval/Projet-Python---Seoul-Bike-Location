@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Deployment Tutorial 1</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Style.css') }}">
+
+</head>
+
+<body style="background: #2c7cb2;">
+    <div class="login">
+        <h1>Seoul Bike location prediction</h1>
+
+        <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('predict')}}" method="post">
+
+            <label for="Hour">Hour:</label>
+            <input type="number" name="Hour" placeholder="ex: 12" min="0" max="23" required="required" />
+            <br />
+            <label for="Temperature(°C)">Temperature(°C):</label>
+            <input type="text" name="Temperature(°C)" placeholder="ex: 12.3" required="required" />
+            <br />
+            <label for="Humidity(%)">Humidity(%):</label>
+            <input type="number" name="Humidity(%)" placeholder="ex: 60" min="0" max="100" required="required" />
+            <br />
+            <label for="Wind speed (m/s)">Wind speed (m/s):</label>
+            <input type="text" name="Wind speed (m/s)" placeholder="ex: 0.3" required="required" />
+            <br />
+            <p>Visibility : </p>
+            <input type="radio" id="visibility" name="Visibility" value="1" checked>
+            <label for="visibility">Yes</label>
+            <input type="radio" id="no visibility" name="Visibility" value="0">
+            <label for="no visibility">No</label>
+            <br />
+            <p>Solar Radiation : </p>
+            <input type="radio" id="sun" name="Sun" value="1" checked>
+            <label for="sun">Yes</label>
+            <input type="radio" id="no sun" name="Sun" value="0">
+            <label for="no sun">No</label>
+            <br />
+            <p>Holiday : </p>
+            <input type="radio" id="holiday" name="Holiday" value="1" checked>
+            <label for="holiday">Yes</label>
+            <input type="radio" id="no holiday" name="Holiday" value="0">
+            <label for="no holiday">No</label>
+            <br />
+            <label for="Month">Month:</label>
+            <input type="number" name="Month" placeholder="ex: 1" min="1" max="12" required="required" />
+            <br />
+            <p>Snow : </p>
+            <input type="radio" id="snow" name="Snow" value="1" checked>
+            <label for="snow">Yes</label>
+            <input type="radio" id="no snow" name="Snow" value="0">
+            <label for="no snow">No</label>
+            <br />
+            <p>Rain : </p>
+            <input type="radio" id="rain" name="Rain" value="1" checked>
+            <label for="rain">Yes</label>
+            <input type="radio" id="no rain" name="Rain" value="0">
+            <label for="no rain">No</label>
+            <br />
+            <p>Season : </p>
+            <input type="radio" id="winter" name="season" value="Winter" checked>
+            <label for="winter">Winter</label>
+            <br>
+            <input type="radio" id="spring" name="season" value="Spring">
+            <label for="spring">Spring</label>
+            <br>
+            <input type="radio" id="autumn" name="season" value="Autumn">
+            <label for="autumn">Autumn</label>
+            <br />
+            <input type="radio" id="summer" name="season" value="Summer">
+            <label for="summer">Summer</label>
+            <br />
+            <br />
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict number of bike to be rented</button>
+        </form>
+        <form>
+            <h1>Login</h1>
+            <div class="form-input-material">
+                <input type="text" name="username" id="username" placeholder=" " autocomplete="off" class="form-control-material" required />
+                <label for="username">Username</label>
+            </div>
+            <div class="form-input-material">
+                <input type="password" name="password" id="password" placeholder=" " autocomplete="off" class="form-control-material" required />
+                <label for="password">Password</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-ghost">Login</button>
+        </form>
+        <br>
+        <br>
+        <div>
+            {{ prediction_text }}
+        </div>
+        
+
+    </div>
+</body>
+</html>
