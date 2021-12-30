@@ -43,14 +43,13 @@ def predict():
 
     return render_template('index2.html', prediction_text='Number of bike to be rented should be {0}'.format(output))
 
-@app.route('/results',methods=['POST'])
-def results():
-
-    data = request.get_json(force=True)
-    prediction = model.predict([np.array(list(data.values()))])
-
-    output = prediction[0]
-    return jsonify(output)
+#@app.route('/results',methods=['POST'])
+#def results():
+#
+#    data = request.get_json(force=True)
+#    prediction = model.predict([np.array(list(data.values()))])
+#    output = prediction[0]
+#    return jsonify(output)
 
 if __name__ == "__main__":
     app.run(host='localhost', port=8989)
