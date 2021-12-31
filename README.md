@@ -21,8 +21,7 @@ Thus we will explore this dataset in order to show the link between the number o
 
 ### Visualisation of our API :
 
-screenshot
-
+<img src="https://user-images.githubusercontent.com/84092005/147832957-acc81343-9227-427a-9971-14f960158343.png" width="600" height="450">
 
 ###  Visualisation of two graphs :
 
