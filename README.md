@@ -32,6 +32,6 @@ screenshot
 in order to do this work we used some contents of shared ressources online that helped us figure out how to present our work.
 
 we used:
-- for CSS : 
-- for API :
-- for Machine Learning : 
+- for CSS :  https://freefrontend.com/css-forms/
+- for API : https://towardsdatascience.com/how-to-easily-deploy-machine-learning-models-using-flask-b95af8fe34d4
+- for Machine Learning : https://www.kaggle.com/faressayah/linear-regression-house-price-prediction
