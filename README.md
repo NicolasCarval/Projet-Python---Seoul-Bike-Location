@@ -25,8 +25,16 @@ Thus we will explore this dataset in order to show the link between the number o
 
 ###  Visualisation of two graphs :
 
-<img src="https://user-images.githubusercontent.com/84092005/147833073-e362f2be-3db7-41f8-aa05-6529aa169607.png" width="400" height="350">
-
+<table>
+  <tr>
+    <td>
+      <img src="https://user-images.githubusercontent.com/84092005/147833281-6052e5ff-8161-4a68-9731-b35c5ee60e70.png" width="550" height="400">
+    </td>
+    <td>
+      <img src="https://user-images.githubusercontent.com/84092005/147833073-e362f2be-3db7-41f8-aa05-6529aa169607.png" width="550" height="400">
+    </td>
+  </tr>
+</table>
 
 ### Acknowledgement : 
 in order to do this work we used some contents of shared ressources online that helped us figure out how to present our work.
