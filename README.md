@@ -25,7 +25,7 @@ Thus we will explore this dataset in order to show the link between the number o
 
 ###  Visualisation of two graphs :
 
-screenshot
+<img src="https://user-images.githubusercontent.com/84092005/147833073-e362f2be-3db7-41f8-aa05-6529aa169607.png" width="400" height="350">
 
 
 ### Acknowledgement : 
