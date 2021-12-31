@@ -19,14 +19,14 @@
             <label for="Hour">Hour</label>
             <input type="number" name="Hour" id="Hour" placeholder=" ex: 8" autocomplete="off" min="0" max="23" required />
             <label for="Temperature(°C)">Temperature(°C)</label>
-            <input type="text" name="Temperature(°C)" id="Temperature(°C)" placeholder=" " autocomplete="off" required />
+            <input type="number" name="Temperature(°C)" id="Temperature(°C)" placeholder="ex: 12.5 " step="0.01" min="-30" max="50" autocomplete="off" required />
 
             <label for="Humidity(%)">Humidity(%)</label>
             <input type="number" name="Humidity(%)" id="Humidity(%)" placeholder=" ex : 70" autocomplete="off" min="0" max="100" required />
 
 
             <label for="Wind speed (m/s)">Wind speed (m/s)</label>
-            <input type="text" name="Wind speed (m/s)" id="Wind speed (m/s)" placeholder=" ex : 0.3" autocomplete="off" required />
+            <input type="number" name="Wind speed (m/s)" id="Wind speed (m/s)" placeholder=" ex : 0.3" step="0.01" min="0" max="15" autocomplete="off" required />
 
             <label>Visibility :</label>
             <label for="visibility">Yes</label>
@@ -47,7 +47,7 @@
             <input type="radio" id="no holiday" name="Holiday" value="0">
 
             <label for="Month">Month:</label>
-            <input type="number" name="Month" placeholder=" " min="1" max="12" autocomplete="off" required />
+            <input type="number" name="Month" placeholder="ex: 12 " min="1" max="12" autocomplete="off" required />
 
             <label>Snow : </label>
             <label for="snow">Yes</label>
