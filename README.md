@@ -10,6 +10,7 @@ In this repository you will find :
 - A **HTML** file (HTML_Notebook.html), corresponding to the Notebook but in html in order to ease the viewing of every graphs
 - A **Python** file (app.py), corresponding to our API, allowing us to make predictions, it is related to the template and static directories, containing .html and .css for interface.
 - A **Pickle** file (model.pkl), which stores our Machine learning model created.
+- A **CSV** file (Seoul_Bike_Data.csv), the dataset.
 
 ### Context:
 This dataset contains count of public bikes rented at each hour in Seoul Bike sharing System with the corresponding Weather data and Holidays information.
