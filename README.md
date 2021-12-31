@@ -7,7 +7,7 @@ In this repository you will find :
 
 - A **PDF** report (SeoulBikeRent.pdf), explaining all the in and outs of the project
 - A **Jupiter Notebook** (Project.ipng), containing all our work on the dataset (Analysis and Machine Learning)
-- A **HTML** file (HTML_Notebook.html), corresponding to the Notebook but in html in order to ease the viewing of every graphs
+- A **HTML** file (HTML_Notebook.html), corresponding to the Notebook but in html in order to ease the viewing of every graphs. **click on download, then the raw file is displayed, save the raw to an .html and then you can open it like a web page, it will display everything in correct format**
 - A **Python** file (app.py), corresponding to our API, allowing us to make predictions, it is related to the template and static directories, containing .html and .css for interface.
 - A **Pickle** file (model.pkl), which stores our Machine learning model created.
 - A **CSV** file (Seoul_Bike_Data.csv), the dataset.
