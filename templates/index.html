@@ -1,103 +1,114 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Deployment Tutorial 1</title>
-    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Style.css') }}">
 
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Seoul Bike Location Prediction</title>
+    <link href="static/styles.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body style="background: #2c7cb2;">
-    <div class="login">
-        <h1>Seoul Bike location prediction</h1>
+<body>
+    <div class="container">
+        <div class="brand-title">SEOUL BIKE LOCATION PREDICTION</div>
+        <div class="brand-subtitle">BORDAS ALEXANDRE & CARVAL NICOLAS</div>
+        <div class="brand-logo"></div>
+        <div class="result">Result : {{ prediction_text }}</div>
 
-        <!-- Main Input For Receiving Query to our ML -->
-        <form action="{{ url_for('predict')}}" method="post">
+        <br />
+        <form class="inputs" action="{{ url_for('predict')}}" method="post">
 
-            <label for="Hour">Hour:</label>
-            <input type="number" name="Hour" placeholder="ex: 12" min="0" max="23" required="required" />
-            <br />
-            <label for="Temperature(°C)">Temperature(°C):</label>
-            <input type="text" name="Temperature(°C)" placeholder="ex: 12.3" required="required" />
-            <br />
-            <label for="Humidity(%)">Humidity(%):</label>
-            <input type="number" name="Humidity(%)" placeholder="ex: 60" min="0" max="100" required="required" />
-            <br />
-            <label for="Wind speed (m/s)">Wind speed (m/s):</label>
-            <input type="text" name="Wind speed (m/s)" placeholder="ex: 0.3" required="required" />
-            <br />
-            <p>Visibility : </p>
-            <input type="radio" id="visibility" name="Visibility" value="1" checked>
-            <label for="visibility">Yes</label>
-            <input type="radio" id="no visibility" name="Visibility" value="0">
-            <label for="no visibility">No</label>
-            <br />
-            <p>Solar Radiation : </p>
-            <input type="radio" id="sun" name="Sun" value="1" checked>
-            <label for="sun">Yes</label>
-            <input type="radio" id="no sun" name="Sun" value="0">
-            <label for="no sun">No</label>
-            <br />
-            <p>Holiday : </p>
-            <input type="radio" id="holiday" name="Holiday" value="1" checked>
-            <label for="holiday">Yes</label>
-            <input type="radio" id="no holiday" name="Holiday" value="0">
-            <label for="no holiday">No</label>
-            <br />
-            <label for="Month">Month:</label>
-            <input type="number" name="Month" placeholder="ex: 1" min="1" max="12" required="required" />
-            <br />
-            <p>Snow : </p>
-            <input type="radio" id="snow" name="Snow" value="1" checked>
-            <label for="snow">Yes</label>
-            <input type="radio" id="no snow" name="Snow" value="0">
-            <label for="no snow">No</label>
-            <br />
-            <p>Rain : </p>
-            <input type="radio" id="rain" name="Rain" value="1" checked>
-            <label for="rain">Yes</label>
-            <input type="radio" id="no rain" name="Rain" value="0">
-            <label for="no rain">No</label>
-            <br />
-            <p>Season : </p>
-            <input type="radio" id="winter" name="season" value="Winter" checked>
-            <label for="winter">Winter</label>
-            <br>
-            <input type="radio" id="spring" name="season" value="Spring">
-            <label for="spring">Spring</label>
-            <br>
-            <input type="radio" id="autumn" name="season" value="Autumn">
-            <label for="autumn">Autumn</label>
-            <br />
-            <input type="radio" id="summer" name="season" value="Summer">
-            <label for="summer">Summer</label>
-            <br />
-            <br />
-            <button type="submit" class="btn btn-primary btn-block btn-large">Predict number of bike to be rented</button>
-        </form>
-        <form>
-            <h1>Login</h1>
-            <div class="form-input-material">
-                <input type="text" name="username" id="username" placeholder=" " autocomplete="off" class="form-control-material" required />
-                <label for="username">Username</label>
+            <div class="inputsOptions">
+                <div>
+                    <label class="input_label" for="Hour">Hour</label>
+                    <input type="number" name="Hour" id="Hour" placeholder=" ex : 8" autocomplete="off" min="0" max="23" required />
+                </div>
+                <div>
+                    <label class="input_label" for="Temperature(°C)">Temperature (°C)</label>
+                    <input type="text" name="Temperature(°C)" id="Temperature(°C)" placeholder=" ex : 24 " autocomplete="off" required />
+                </div>
+                <div>
+                    <label class="input_label" for="Humidity(%)">Humidity (%)</label>
+                    <input type="number" name="Humidity(%)" id="Humidity(%)" placeholder=" ex : 70" autocomplete="off" min="0" max="100" required />
+                </div>
+                <div>
+                    <label class="input_label" for="Wind speed (m/s)">Wind speed (m/s)</label>
+                    <input type="text" name="Wind speed (m/s)" id="Wind speed (m/s)" placeholder=" ex : 0.3" autocomplete="off" required />
+                </div>
             </div>
-            <div class="form-input-material">
-                <input type="password" name="password" id="password" placeholder=" " autocomplete="off" class="form-control-material" required />
-                <label for="password">Password</label>
-            </div>
-            <button type="submit" class="btn btn-primary btn-ghost">Login</button>
-        </form>
-        <br>
-        <br>
-        <div>
-            {{ prediction_text }}
-        </div>
-        
 
+            <div class="radios">
+                <div class="radio_vis">
+                    <label class="radio_title" for="visibility">Visibility</label>
+                    <div class="radio_classic_content">
+                        <input class="radio_input" type="radio" id="visibility" name="Visibility" value="1" checked>
+                        <label class="radio_label" for="visibility">YES</label>
+                        <input class="radio_input" type="radio" id="no visibility" name="Visibility" value="0">
+                        <label class="radio_label" for="no visibility">NO</label>
+                    </div>
+                </div>
+
+                <div class="radio_sun">
+                    <label class="radio_title" for="sun">Sun</label>
+                    <div class="radio_classic_content">
+                        <input class="radio_input" type="radio" id="sun" name="Sun" value="1" checked>
+                        <label class="radio_label" for="sun">YES</label>
+                        <input class="radio_input" type="radio" id="no sun" name="Sun" value="0">
+                        <label class="radio_label" for="no sun">NO</label>
+                    </div>
+                </div>
+
+                <div class="radio_holiday">
+                    <label class="radio_title" for="holiday">Holiday</label>
+                    <div class="radio_classic_content">
+                        <input class="radio_input" type="radio" id="holiday" name="Holiday" value="1">
+                        <label class="radio_label" for="holiday">YES</label>
+                        <input class="radio_input" type="radio" id="no holiday" name="Holiday" value="0" checked>
+                        <label class="radio_label" for="no holiday">NO</label>
+                    </div>
+                </div>
+
+                <div class="radio_snow">
+                    <label class="radio_title" for="snow">Snow</label>
+                    <div class="radio_classic_content">
+                        <input class="radio_input" type="radio" id="snow" name="Snow" value="1">
+                        <label class="radio_label" for="snow">YES</label>
+                        <input class="radio_input" type="radio" id="no snow" name="Snow" value="0" checked>
+                        <label class="radio_label" for="no snow">NO</label>
+                    </div>
+                </div>
+
+                <div class="radio_rain">
+                    <label class="radio_title" for="rain">Rain</label>
+                    <div class="radio_classic_content">
+                        <input class="radio_input" type="radio" id="rain" name="Rain" value="1">
+                        <label class="radio_label" for="rain">YES</label>
+                        <input class="radio_input" type="radio" id="no rain" name="Rain" value="0" checked>
+                        <label class="radio_label" for="no rain">NO</label>
+                    </div>
+                </div>
+            </div>
+            <div class="radios_year">
+                <div class="radio_season">
+                    <div class="radio_season_content">
+                        <input class="radio_input_season" type="radio" id="winter" name="season" value="Winter" checked>
+                        <label class="radio_label_season" for="winter">WINTER</label>
+                        <input class="radio_input_season" type="radio" id="spring" name="season" value="Spring">
+                        <label class="radio_label_season" for="spring">SPRING</label>
+                        <input class="radio_input_season" type="radio" id="summer" name="season" value="Summer">
+                        <label class="radio_label_season" for="summer">SUMMER</label>
+                        <input class="radio_input_season" type="radio" id="autumn" name="season" value="Autumn">
+                        <label class="radio_label_season" for="autumn">AUTUMN</label>
+                    </div>
+                </div>
+                <div class="month">
+                    <label class="input_label" for="Month">Month</label>
+                    <input type="number" name="Month" placeholder=" " min="1" max="12" autocomplete="off" required />
+                </div>
+
+            </div>
+            <button type="submit">PREDICT</button>
+        </form>
     </div>
+    
 </body>
-</html>
+  </html>

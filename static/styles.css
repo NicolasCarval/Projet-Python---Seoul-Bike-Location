@@ -1,0 +1,253 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1;
+    margin: 0;
+    width: 100vw;
+    background: #202124;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.container {
+    width: 1600px;
+    height: 900px;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #37383A;
+    box-shadow: 14px 14px 20px #1F2021, -14px -14px 20px #242526;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-logo {
+    height: 150px;
+    width: 150px;
+    background: url("https://www.esilv.fr/ecole-ingenieur/wp-content/uploads/2020/09/logo-esilv-b-150.png");
+    margin: auto;
+    border-radius: 8%;
+    box-sizing: border-box;
+    box-shadow: 7px 7px 10px #242526, -7px -7px 10px #37383A;
+}
+
+.brand-title {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    font-weight: bolder;
+    text-align: center;
+    color: white;
+    text-shadow: #1F2021 6px 0 6px;
+}
+.brand-subtitle {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: bolder;
+    text-align: center;
+    color: white;
+    text-shadow: #1F2021 6px 0 6px;
+}
+
+.result {
+  margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+    color: white;
+}
+
+.input_label {
+    text-align: left;
+    margin-top: 2px;
+    margin-bottom: 6px;
+    color: white;
+    font-weight: 600;
+}
+
+inputsOptions {
+    background: #ecf0f3;
+    height: 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: white;
+    padding: 14px 12px;
+    display: block;
+    width: 50%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.inputsOptions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+    .inputsOptions div {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+.radios {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.radios_year {
+    margin-top: 10px;
+}
+.month {
+    margin-top: 30px;
+}
+
+.option {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.optionTitle {
+    margin-bottom: 20px;
+}
+
+.radio_title {
+    margin-top: 2px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    color: white;
+    font-weight: 600;
+}
+.radio_title_season {
+    margin-top: 2px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    color: white;
+    font-weight: 600;
+}
+
+.radio_classic_content {
+    margin-top: 30px;
+    display: inline-flex;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.25);
+}
+.radio_input {
+    display: none;
+}
+.radio_label {
+    padding: 8px 20px;
+    font-size: 13px;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 800;
+    color: white;
+    background: #1F2021;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.radio_label:not(last-of-type) {
+    border-right: 1px solid rgba(0,0,0,0.25);
+}
+.radio_input:checked + .radio_label {
+    background: #CF1052;
+}
+
+
+.radio_season_content {
+    margin-top: 30px;
+    display: inline-flex;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.25);
+}
+
+.radio_input_season {
+    display: none;
+}
+
+.radio_label_season {
+    padding: 8px 30px;
+    font-size: 13px;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 800;
+    color: white;
+    background: #1F2021;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+
+.radio_input_season:checked + .radio_label_season[for="winter"] {
+    background: #C9F1FD;
+    color: #202124;
+}
+.radio_input_season:checked + .radio_label_season[for="spring"] {
+    background: #D6F1C6;
+    color: #202124;
+}
+.radio_input_season:checked + .radio_label_season[for="summer"] {
+    background: #F9CC87;
+    color: #202124;
+}
+.radio_input_season:checked + .radio_label_season[for="autumn"] {
+    background: #C18F55;
+    color: #202124;
+}
+
+
+
+
+
+
+button {
+    margin: 60px auto;
+    background: #CF1052;
+    height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    font-weight: 800;
+    font-size: 16px;
+    width: 100px;
+    transition: background-color .3s;
+    display: block;
+    width: 10%;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+    button:hover {
+        color: white;
+        background-color: #A00C40;
+    }
