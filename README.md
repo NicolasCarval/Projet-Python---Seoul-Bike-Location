@@ -23,7 +23,7 @@ Thus we will explore this dataset in order to show the link between the number o
 
 <img src="https://user-images.githubusercontent.com/84092005/147891665-402ae35b-1944-4578-8bf3-a9ac689709f2.png" >
 
-###  Visualisation of two graphs :
+###  Visualisation of graphs :
 
 <table>
   <tr>
@@ -33,8 +33,10 @@ Thus we will explore this dataset in order to show the link between the number o
     <td>
       <img src="https://user-images.githubusercontent.com/84092005/147833073-e362f2be-3db7-41f8-aa05-6529aa169607.png" width="500" height="300">
     </td>
-  </tr>
+  </tr>  
 </table>
+<h3>Interactive graphs example :</h1>
+      <img src="https://user-images.githubusercontent.com/84092005/148060571-67c39a84-3214-46e4-a810-ccbbda895693.png" >
 
 ### Conclusion :
 After analyzing the data and removing the irrelevant columns, we tried different kind of machine learning models to see which one suits our dataset the best. In the end, we chose the Random Forest model which provides us the best results (r²:0.87 / RMSE:222, corresponds to bikes) on the test set, and that is why we take the decision to use this model in our flask API.
