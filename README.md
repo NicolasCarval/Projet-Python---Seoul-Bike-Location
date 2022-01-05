@@ -60,4 +60,4 @@ we took some inspiration from these :
 - for API : https://towardsdatascience.com/how-to-easily-deploy-machine-learning-models-using-flask-b95af8fe34d4
 - for Machine Learning : https://www.kaggle.com/faressayah/linear-regression-house-price-prediction
 
-Thanks for reading !
+### Thanks for reading !
